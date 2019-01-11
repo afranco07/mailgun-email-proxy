@@ -1,8 +1,10 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import os
 import requests
 
 app = Flask(__name__)
+CORS(app)
 
 BASE_URL = os.environ['MAILGUN_BASE_URL']
 DOMAIN = os.environ['MAILGUN_DOMAIN']
