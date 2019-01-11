@@ -11,10 +11,6 @@ TO_EMAIL = os.environ['MAILGUN_TO_EMAIL']
 
 MAILGUN_URL = '{}/{}/messages'.format(BASE_URL, DOMAIN)
 
-@app.route('/')
-def hello_world():
-    return 'Hello, World!'
-
 @app.route('/send-email', methods=['POST'])
 def send_email():
     FROM_EMAIL = request.json['from']
